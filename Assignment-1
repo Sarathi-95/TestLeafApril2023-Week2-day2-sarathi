@@ -1,0 +1,43 @@
+package Selenium_practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+public class Day2Assignment1 {
+    public static void main(String[] args) throws InterruptedException {
+
+    WebDriver driver=new EdgeDriver();
+        driver.get("http://leaftaps.com/opentaps/control/login");
+        driver.manage().window().maximize();
+    WebElement username = driver.findElement(By.id("username"));
+            username.sendKeys("DemoCsr");
+    WebElement password  = driver.findElement(By.id("password"));
+        password.sendKeys("crmsfa");
+    WebElement loginbtn  = driver.findElement(By.className("decorativeSubmit"));
+        loginbtn.click();
+        Thread.sleep(5000);
+    WebElement linkCRMSFA = driver.findElement(By.linkText("CRM/SFA"));
+        linkCRMSFA.click();
+        Thread.sleep(2000);
+    WebElement leadBtn  = driver.findElement(By.linkText("Leads"));
+        leadBtn.click();
+    WebElement createlead  = driver.findElement(By.linkText("Create Lead"));
+        createlead.click();
+    WebElement companyName  = driver.findElement(By.id("createLeadForm_companyName"));
+        companyName.sendKeys("TestLeaf.in");
+    WebElement fname  = driver.findElement(By.id("createLeadForm_firstName"));
+        fname.sendKeys("Sarathi");
+    WebElement lname  = driver.findElement(By.id("createLeadForm_lastName"));
+        lname.sendKeys("Ramesh");
+    WebElement email  = driver.findElement(By.id("createLeadForm_primaryEmail"));
+        email.sendKeys("sarathi123@gmail.com");
+    WebElement phNum  = driver.findElement(By.id("createLeadForm_primaryPhoneNumber"));
+        phNum.sendKeys("1234567899");
+    WebElement createLeadBTN  = driver.findElement(By.name("submitButton"));
+        createLeadBTN.click();
+        Thread.sleep(3000);
+        driver.quit();
+
+} }
