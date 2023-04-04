@@ -37,6 +37,15 @@ public class Day2Assignment1 {
         phNum.sendKeys("1234567899");
     WebElement createLeadBTN  = driver.findElement(By.name("submitButton"));
         createLeadBTN.click();
+        
+		driver.findElement(By.linkText("Edit")).click();
+		WebElement Update = driver.findElement(By.id("updateLeadForm_companyName"));
+			Update.clear();				
+			Update.sendKeys("Org.TestLeaf");
+		
+		driver.findElement(By.name("submitButton")).click();       
+        
+		
         Thread.sleep(3000);
         driver.quit();
 
